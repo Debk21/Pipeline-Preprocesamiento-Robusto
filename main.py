@@ -105,6 +105,27 @@ print(f"MAE:  {mae:.4f}")
 print(f"RMSE: {rmse:.4f}")
 print(f"R²:   {r2:.4f}")
 
+#Prueba con un registro creado manualmente
+nuevo_registro = pd.DataFrame([{
+    "MedInc": 5.0,
+    "HouseAge": 20.0,
+    "AveRooms": 5.5,
+    "AveBedrms": 1.1,
+    "Population": 1000.0,
+    "AveOccup": 3.0,
+    "Latitude": 34.0,
+    "Longitude": -118.0,
+    "categoria_ingreso": "Alto"
+}])
+
+#Prediccion con registro nuevo
+predicciones_nueva = pipeline_final.predict(nuevo_registro)
+
+print("\n--- Prediccion para un registro nuevo ---")
+print(f"Valor estimado: {predicciones_nueva[0]: .4f}")
+
+
+#Guardar pipeline entrenado
 joblib.dump(pipeline_final, "pipeline_viviendas.joblib")
 
 print("\nPipeline guardado correctamente")
