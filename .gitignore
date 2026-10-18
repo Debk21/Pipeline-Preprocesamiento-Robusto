@@ -1,0 +1,6 @@
+
+__pycache__/
+*.pyc
+pipeline_viviendas.joblib
+.venv/
+venv/
